@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PostsService } from './posts.service';
+import { UsersService } from './users.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,10 @@ import { Component } from '@angular/core';
   styles: [``]
 })
 export class AppComponent {
-  constructor(){
-   
+  constructor(
+    private postsSrv: PostsService,
+    private usersSrv: UsersService
+  ){
+
   }
 }

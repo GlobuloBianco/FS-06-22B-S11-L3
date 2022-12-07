@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { UsersService } from '../users.service';
+import { NavComponent } from '../navbar.component';
 
 @Component({
   template: `
@@ -11,7 +12,9 @@ import { UsersService } from '../users.service';
         </li>
       </ul>
       <hr />
+
       <router-outlet></router-outlet>
+
     </div>
   `,
   styles: [],
@@ -20,7 +23,10 @@ export class UsersPage implements OnInit {
   users!: User[];
   constructor(private usersSrv: UsersService) {}
 
+
+
   ngOnInit(): void {
     this.users = this.usersSrv.getUsers();
   }
+
 }
